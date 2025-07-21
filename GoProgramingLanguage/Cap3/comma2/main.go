@@ -16,7 +16,11 @@ func comma(s string) string {
 		fmt.Fprintf(&buf, "%c", s[(len(s)-1)-i])
 		n++
 	}
-	return buf.String() 
+	var buf2 bytes.Buffer
+	for i := 0; i < len(buf.String()); i++ {
+		fmt.Fprintf(&buf2, "%c", buf.String()[(len(buf.String())-1)-i])
+	}
+	return buf2.String() 
 }
 
 func main(){
